@@ -1,0 +1,91 @@
+.wysiwyg {
+    p {
+    display: block;
+    margin: 1em 0;
+    }
+    blockquote {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 40px;
+    -webkit-margin-end: 40px;
+    }
+
+    .aligncenter {
+    display: block;
+    margin: 0 auto;
+    }
+    .alignright { float: right;margin-left: 0; }
+    .alignleft { float: left;margin-right: 0; }
+    h2 {@extend .box--view__title;margin-top: 1.5em;}
+    h3 {font-size: 20px;font-weight: bold;margin-bottom: 1.3em;margin-top: 1.5em;}
+    h4 {font-size: 18px;margin-bottom: 1.2em;margin-top: 1.5em;}
+    h5 {font-size: 16px;margin-bottom: 1.1em;font-weight: bold;margin-top: 1.5em;}
+    h6 {margin-bottom: 1em;font-weight: bold;margin-top: 1.5em;}
+    @include mq(small, up) {
+        h3 {font-size: 24px;}
+        h4 {font-size: 20px;}
+        h5 {font-size: 18px;}
+        h6 {font-size: 16px;}
+    }
+    img {
+    height: auto;
+    max-width: 100%;
+    margin-bottom: 1em;
+    }
+    table {
+    border-top: 2px solid  #ddd;
+    border-bottom: 2px solid  #ddd;
+    th {
+    border-bottom: 1px solid  #ddd;
+    }
+    td {
+    border-bottom: 1px solid  #ddd;
+    }
+    }
+    ul {
+        margin: 1em 0px;
+    li {
+    position: relative;
+    padding-left: 20px;
+    &:before {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 11px;
+    @include mq(small, up) {top: 13px;}
+    width: 5px;
+    height: 5px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAHCAYAAAArkDztAAAATklEQVQYV2NkgAIFBQUDEPPBgwcXQDSjgoKCwP///9czMDA4QNUcYGRkDGSUk5OrZ2RkbIDpBNH///9vYJSXl9+PpBomfwC3Dpx24HIVAE/DHrY0A+wNAAAAAElFTkSuQmCC");
+    background-size: 5px;
+    }
+    }
+    }
+    ol {
+        margin: 1em 0px;
+    li {
+    counter-increment: li;
+    padding-left: 2em;
+    text-indent: -2em;
+    &:before{
+    position: relative;
+    content: "0"counter(li)". ";
+    color: #94989f;
+    font-weight: bold;
+    }
+    &:nth-child(n+10):before {
+    content: ""counter(li)". ";
+    }
+    }
+    }
+    a {
+    text-decoration: underline;
+    &:hover {
+    text-decoration: none;
+    }
+    }
+    pre {
+    padding: 1em;
+    background: #ddd;
+    }
+}

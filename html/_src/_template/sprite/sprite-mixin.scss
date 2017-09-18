@@ -1,0 +1,39 @@
+// 自動生成
+<% _.each(data.sprites, function(sprite) { %>
+@mixin mix_<%= classNamePre %><%= sprite.name %>($insert: before) {
+	@if $insert == false {
+		background-repeat: no-repeat;
+		background-image: url(<%= imgPath %><%= imgName %>);
+		<% if (for_sp) { %>
+		background-size: <%= sprite.total_width/2 %>px <%= sprite.total_height/2 %>px;
+		background-position: <%= sprite.offset_x/2 %>px <%= sprite.offset_y/2 %>px;
+		width: <%= sprite.width/2 %>px;
+		height: <%= sprite.height/2 %>px;
+		<% }else { %>
+		background-position: <%= sprite.offset_x %>px <%= sprite.offset_y %>px;
+		background-size: auto;
+		width: <%= sprite.width %>px;
+		height: <%= sprite.height %>px;
+		<% } %>
+		display: block;
+	} @else {
+		&:#{$insert} {
+			content: '';
+			background-repeat: no-repeat;
+			background-image: url(<%= imgPath %><%= imgName %>);
+			<% if (for_sp) { %>
+			background-size: <%= sprite.total_width/2 %>px <%= sprite.total_height/2 %>px;
+			background-position: <%= sprite.offset_x/2 %>px <%= sprite.offset_y/2 %>px;
+			width: <%= sprite.width/2 %>px;
+			height: <%= sprite.height/2 %>px;
+			<% }else { %>
+			background-position: <%= sprite.offset_x %>px <%= sprite.offset_y %>px;
+			background-size: auto;
+			width: <%= sprite.width %>px;
+			height: <%= sprite.height %>px;
+			<% } %>
+			display: inline-block;
+		}
+	}
+}
+<% }); %>

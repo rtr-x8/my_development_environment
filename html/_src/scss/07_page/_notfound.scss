@@ -1,0 +1,13 @@
+.notfound-box {
+	padding-top: 50px;
+	max-width: 270px;
+	&__txt {
+		margin-bottom: 20px;
+	}
+	@include mq(small, up) {
+		padding-top: 100px;
+		&__txt {
+			margin-bottom: 50px;
+		}
+	}
+}

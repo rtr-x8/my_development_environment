@@ -1,0 +1,577 @@
+// 自動生成
+
+/*
+#overview
+スプライト [ pc ]
+
+スプライト [ pc ]
+*/
+
+
+/*#styleguide
+
+mixinに関して
+デフォルトでbeforeに挿入
+引数にafter指定でafterに挿入
+falseを指定すればその要素
+
+```
+<table class='dev_table'>
+<tr>
+<th>アイコン</th>
+<th>クラス名</th>
+<th>mixin名</th>
+</tr>
+
+<tr>
+<td>
+<div class='sprite--pc__arw01'></div>
+</td>
+<td>
+<span class='styleguide__copy'>sprite--pc__arw01</span>
+</td>
+<td>
+<span class='styleguide__copy'>mix_sprite--pc__arw01</span>
+</td>
+</tr>
+
+<tr>
+<td>
+<div class='sprite--pc__controller01_b'></div>
+</td>
+<td>
+<span class='styleguide__copy'>sprite--pc__controller01_b</span>
+</td>
+<td>
+<span class='styleguide__copy'>mix_sprite--pc__controller01_b</span>
+</td>
+</tr>
+
+<tr>
+<td>
+<div class='sprite--pc__controller01_w'></div>
+</td>
+<td>
+<span class='styleguide__copy'>sprite--pc__controller01_w</span>
+</td>
+<td>
+<span class='styleguide__copy'>mix_sprite--pc__controller01_w</span>
+</td>
+</tr>
+
+<tr>
+<td>
+<div class='sprite--pc__logo01_b'></div>
+</td>
+<td>
+<span class='styleguide__copy'>sprite--pc__logo01_b</span>
+</td>
+<td>
+<span class='styleguide__copy'>mix_sprite--pc__logo01_b</span>
+</td>
+</tr>
+
+<tr>
+<td>
+<div class='sprite--pc__logo01_w'></div>
+</td>
+<td>
+<span class='styleguide__copy'>sprite--pc__logo01_w</span>
+</td>
+<td>
+<span class='styleguide__copy'>mix_sprite--pc__logo01_w</span>
+</td>
+</tr>
+
+<tr>
+<td>
+<div class='sprite--pc__logo02_w'></div>
+</td>
+<td>
+<span class='styleguide__copy'>sprite--pc__logo02_w</span>
+</td>
+<td>
+<span class='styleguide__copy'>mix_sprite--pc__logo02_w</span>
+</td>
+</tr>
+
+<tr>
+<td>
+<div class='sprite--pc__pagetop'></div>
+</td>
+<td>
+<span class='styleguide__copy'>sprite--pc__pagetop</span>
+</td>
+<td>
+<span class='styleguide__copy'>mix_sprite--pc__pagetop</span>
+</td>
+</tr>
+
+<tr>
+<td>
+<div class='sprite--pc__recruit01'></div>
+</td>
+<td>
+<span class='styleguide__copy'>sprite--pc__recruit01</span>
+</td>
+<td>
+<span class='styleguide__copy'>mix_sprite--pc__recruit01</span>
+</td>
+</tr>
+
+<tr>
+<td>
+<div class='sprite--pc__recruit02'></div>
+</td>
+<td>
+<span class='styleguide__copy'>sprite--pc__recruit02</span>
+</td>
+<td>
+<span class='styleguide__copy'>mix_sprite--pc__recruit02</span>
+</td>
+</tr>
+
+<tr>
+<td>
+<div class='sprite--pc__recruit03'></div>
+</td>
+<td>
+<span class='styleguide__copy'>sprite--pc__recruit03</span>
+</td>
+<td>
+<span class='styleguide__copy'>mix_sprite--pc__recruit03</span>
+</td>
+</tr>
+
+<tr>
+<td>
+<div class='sprite--pc__target01'></div>
+</td>
+<td>
+<span class='styleguide__copy'>sprite--pc__target01</span>
+</td>
+<td>
+<span class='styleguide__copy'>mix_sprite--pc__target01</span>
+</td>
+</tr>
+
+<tr>
+<td>
+<div class='sprite--pc__target02'></div>
+</td>
+<td>
+<span class='styleguide__copy'>sprite--pc__target02</span>
+</td>
+<td>
+<span class='styleguide__copy'>mix_sprite--pc__target02</span>
+</td>
+</tr>
+
+</table>
+```
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+%ext_sprite_pc {
+    background-image: url(../img/module/sprites_pc.png);
+    background-repeat: no-repeat;
+    content: '';
+    display: inline-block;
+}
+
+
+
+.sprite--pc__arw01{
+    &:before {
+        @extend %ext_sprite_pc;
+        
+        width: 25px;
+        height: 7px;
+        background-position: -130px -81px;
+        
+    }
+}
+    //名前
+    //sprite.name         : arw01
+    //x座標
+    //sprite.x            : 130
+    //y座標
+    //sprite.y            : 81
+    //実際にpositionで指定するx座標
+    //sprite.offset_x     : -130
+    //実際にpositionで指定するy座標
+    //sprite.offset_y     : -81
+    //その要素の幅
+    //sprite.width        : 25
+    //その要素の高さ
+    //sprite.height       : 7
+    //画像自体の幅
+    //sprite.total_width  : 239
+    //画像自体の高さ
+    //sprite.total_height : 208
+    //画像名
+    //sprite.image        : sprites_pc.png
+
+
+.sprite--pc__controller01_b{
+    &:before {
+        @extend %ext_sprite_pc;
+        
+        width: 7px;
+        height: 61px;
+        background-position: -232px -71px;
+        
+    }
+}
+    //名前
+    //sprite.name         : controller01_b
+    //x座標
+    //sprite.x            : 232
+    //y座標
+    //sprite.y            : 71
+    //実際にpositionで指定するx座標
+    //sprite.offset_x     : -232
+    //実際にpositionで指定するy座標
+    //sprite.offset_y     : -71
+    //その要素の幅
+    //sprite.width        : 7
+    //その要素の高さ
+    //sprite.height       : 61
+    //画像自体の幅
+    //sprite.total_width  : 239
+    //画像自体の高さ
+    //sprite.total_height : 208
+    //画像名
+    //sprite.image        : sprites_pc.png
+
+
+.sprite--pc__controller01_w{
+    &:before {
+        @extend %ext_sprite_pc;
+        
+        width: 7px;
+        height: 61px;
+        background-position: -232px 0px;
+        
+    }
+}
+    //名前
+    //sprite.name         : controller01_w
+    //x座標
+    //sprite.x            : 232
+    //y座標
+    //sprite.y            : 0
+    //実際にpositionで指定するx座標
+    //sprite.offset_x     : -232
+    //実際にpositionで指定するy座標
+    //sprite.offset_y     : 0
+    //その要素の幅
+    //sprite.width        : 7
+    //その要素の高さ
+    //sprite.height       : 61
+    //画像自体の幅
+    //sprite.total_width  : 239
+    //画像自体の高さ
+    //sprite.total_height : 208
+    //画像名
+    //sprite.image        : sprites_pc.png
+
+
+.sprite--pc__logo01_b{
+    &:before {
+        @extend %ext_sprite_pc;
+        
+        width: 134px;
+        height: 28px;
+        background-position: -78px -40px;
+        
+    }
+}
+    //名前
+    //sprite.name         : logo01_b
+    //x座標
+    //sprite.x            : 78
+    //y座標
+    //sprite.y            : 40
+    //実際にpositionで指定するx座標
+    //sprite.offset_x     : -78
+    //実際にpositionで指定するy座標
+    //sprite.offset_y     : -40
+    //その要素の幅
+    //sprite.width        : 134
+    //その要素の高さ
+    //sprite.height       : 28
+    //画像自体の幅
+    //sprite.total_width  : 239
+    //画像自体の高さ
+    //sprite.total_height : 208
+    //画像名
+    //sprite.image        : sprites_pc.png
+
+
+.sprite--pc__logo01_w{
+    &:before {
+        @extend %ext_sprite_pc;
+        
+        width: 134px;
+        height: 28px;
+        background-position: -84px -148px;
+        
+    }
+}
+    //名前
+    //sprite.name         : logo01_w
+    //x座標
+    //sprite.x            : 84
+    //y座標
+    //sprite.y            : 148
+    //実際にpositionで指定するx座標
+    //sprite.offset_x     : -84
+    //実際にpositionで指定するy座標
+    //sprite.offset_y     : -148
+    //その要素の幅
+    //sprite.width        : 134
+    //その要素の高さ
+    //sprite.height       : 28
+    //画像自体の幅
+    //sprite.total_width  : 239
+    //画像自体の高さ
+    //sprite.total_height : 208
+    //画像名
+    //sprite.image        : sprites_pc.png
+
+
+.sprite--pc__logo02_w{
+    &:before {
+        @extend %ext_sprite_pc;
+        
+        width: 144px;
+        height: 30px;
+        background-position: -78px 0px;
+        
+    }
+}
+    //名前
+    //sprite.name         : logo02_w
+    //x座標
+    //sprite.x            : 78
+    //y座標
+    //sprite.y            : 0
+    //実際にpositionで指定するx座標
+    //sprite.offset_x     : -78
+    //実際にpositionで指定するy座標
+    //sprite.offset_y     : 0
+    //その要素の幅
+    //sprite.width        : 144
+    //その要素の高さ
+    //sprite.height       : 30
+    //画像自体の幅
+    //sprite.total_width  : 239
+    //画像自体の高さ
+    //sprite.total_height : 208
+    //画像名
+    //sprite.image        : sprites_pc.png
+
+
+.sprite--pc__pagetop{
+    &:before {
+        @extend %ext_sprite_pc;
+        
+        width: 29px;
+        height: 15px;
+        background-position: -91px -81px;
+        
+    }
+}
+    //名前
+    //sprite.name         : pagetop
+    //x座標
+    //sprite.x            : 91
+    //y座標
+    //sprite.y            : 81
+    //実際にpositionで指定するx座標
+    //sprite.offset_x     : -91
+    //実際にpositionで指定するy座標
+    //sprite.offset_y     : -81
+    //その要素の幅
+    //sprite.width        : 29
+    //その要素の高さ
+    //sprite.height       : 15
+    //画像自体の幅
+    //sprite.total_width  : 239
+    //画像自体の高さ
+    //sprite.total_height : 208
+    //画像名
+    //sprite.image        : sprites_pc.png
+
+
+.sprite--pc__recruit01{
+    &:before {
+        @extend %ext_sprite_pc;
+        
+        width: 68px;
+        height: 71px;
+        background-position: 0px 0px;
+        
+    }
+}
+    //名前
+    //sprite.name         : recruit01
+    //x座標
+    //sprite.x            : 0
+    //y座標
+    //sprite.y            : 0
+    //実際にpositionで指定するx座標
+    //sprite.offset_x     : 0
+    //実際にpositionで指定するy座標
+    //sprite.offset_y     : 0
+    //その要素の幅
+    //sprite.width        : 68
+    //その要素の高さ
+    //sprite.height       : 71
+    //画像自体の幅
+    //sprite.total_width  : 239
+    //画像自体の高さ
+    //sprite.total_height : 208
+    //画像名
+    //sprite.image        : sprites_pc.png
+
+
+.sprite--pc__recruit02{
+    &:before {
+        @extend %ext_sprite_pc;
+        
+        width: 74px;
+        height: 60px;
+        background-position: 0px -148px;
+        
+    }
+}
+    //名前
+    //sprite.name         : recruit02
+    //x座標
+    //sprite.x            : 0
+    //y座標
+    //sprite.y            : 148
+    //実際にpositionで指定するx座標
+    //sprite.offset_x     : 0
+    //実際にpositionで指定するy座標
+    //sprite.offset_y     : -148
+    //その要素の幅
+    //sprite.width        : 74
+    //その要素の高さ
+    //sprite.height       : 60
+    //画像自体の幅
+    //sprite.total_width  : 239
+    //画像自体の高さ
+    //sprite.total_height : 208
+    //画像名
+    //sprite.image        : sprites_pc.png
+
+
+.sprite--pc__recruit03{
+    &:before {
+        @extend %ext_sprite_pc;
+        
+        width: 81px;
+        height: 57px;
+        background-position: 0px -81px;
+        
+    }
+}
+    //名前
+    //sprite.name         : recruit03
+    //x座標
+    //sprite.x            : 0
+    //y座標
+    //sprite.y            : 81
+    //実際にpositionで指定するx座標
+    //sprite.offset_x     : 0
+    //実際にpositionで指定するy座標
+    //sprite.offset_y     : -81
+    //その要素の幅
+    //sprite.width        : 81
+    //その要素の高さ
+    //sprite.height       : 57
+    //画像自体の幅
+    //sprite.total_width  : 239
+    //画像自体の高さ
+    //sprite.total_height : 208
+    //画像名
+    //sprite.image        : sprites_pc.png
+
+
+.sprite--pc__target01{
+    &:before {
+        @extend %ext_sprite_pc;
+        
+        width: 12px;
+        height: 12px;
+        background-position: -91px -106px;
+        
+    }
+}
+    //名前
+    //sprite.name         : target01
+    //x座標
+    //sprite.x            : 91
+    //y座標
+    //sprite.y            : 106
+    //実際にpositionで指定するx座標
+    //sprite.offset_x     : -91
+    //実際にpositionで指定するy座標
+    //sprite.offset_y     : -106
+    //その要素の幅
+    //sprite.width        : 12
+    //その要素の高さ
+    //sprite.height       : 12
+    //画像自体の幅
+    //sprite.total_width  : 239
+    //画像自体の高さ
+    //sprite.total_height : 208
+    //画像名
+    //sprite.image        : sprites_pc.png
+
+
+.sprite--pc__target02{
+    &:before {
+        @extend %ext_sprite_pc;
+        
+        width: 9px;
+        height: 9px;
+        background-position: -113px -106px;
+        
+    }
+}
+    //名前
+    //sprite.name         : target02
+    //x座標
+    //sprite.x            : 113
+    //y座標
+    //sprite.y            : 106
+    //実際にpositionで指定するx座標
+    //sprite.offset_x     : -113
+    //実際にpositionで指定するy座標
+    //sprite.offset_y     : -106
+    //その要素の幅
+    //sprite.width        : 9
+    //その要素の高さ
+    //sprite.height       : 9
+    //画像自体の幅
+    //sprite.total_width  : 239
+    //画像自体の高さ
+    //sprite.total_height : 208
+    //画像名
+    //sprite.image        : sprites_pc.png
+
+

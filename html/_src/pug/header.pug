@@ -1,0 +1,70 @@
+|<?php
+|	require_once('./dev.php');
+|	$site_title       = 'サイト名';
+|	$site_dscription  = '共通ディスクリプション';
+|	$site_keywords    = '共通キーワード,共通キーワード';
+|	$page_title       = $page_name . '｜' . $site_title;
+|	$page_description = $page_name . '｜' . $site_dscription;
+|	$page_keywords    = $page_name . ','  . $site_keywords;
+|?>
+|<!DOCTYPE html>
+|<html lang="ja">
+head
+	meta(charset='utf-8')
+
+	title <?php echo $page_title; ?>
+	meta(name="viewport" content="width=device-width,user-scalable=yes")
+	meta(name="description", content!="<?php echo $site_dscription; ?>")
+	meta(name="keywords", content="<?php echo $page_keywords; ?>")
+
+	link(rel='stylesheet', href!='<?php echo get_template_directory(); ?>/css/bundle.css')
+	link(rel='subresource', href!='<?php echo get_template_directory(); ?>/css/lazyload.css')
+	link(rel='subresource', href!="//fonts.googleapis.com/earlyaccess/notosansjapanese.css")
+	link(rel='subresource', href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900")
+
+	link(rel="canonical", href!="https://<?php echo $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>")
+
+	meta(property="og:title" content!="<?php echo $page_title; ?>")
+	meta(property="og:url" content!="https://<?php echo $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>")
+	meta(property="og:description" content!="<?php echo $site_dscription; ?>")
+	meta(property="og:type" content="website")
+	meta(property="og:image" content!="<?php echo get_template_directory(); ?>")
+	meta(property="og:site_name" content!="<?php echo $site_title; ?>")
+	meta(property="fb:app_id" content!="")
+
+	meta(name="twitter:card" content!="summary")
+	meta(name="twitter:site" content!="@")
+	meta(name="twitter:player" content!="@")
+
+	meta(name="format-detection" content="telephone=no")
+
+	include ../_template/favicons.html
+	
+	<!--[if lte IE 9]>
+		script.
+			(function() {alert('Please update to IE 10 or higher.')})();
+	<![endif]-->
+|<body id='<?php echo $page_id; ?>' class='body--<?php echo $page_id; ?>'>
+#loader
+	#loader__bar
+	p#loader__txt.font__robot--regular 000
+#js_media_query
+|<div id="wrapper" data-gNav_condition='close'>
+header#gHeader.gHeader.cf(role="banner", itemscope, itemtype="http://schema.org/WPHeader", data-color='w')
+	|<?php if( $page_id === 'home' ): ?>
+	h1.gHeader-logo: a.gHeader-logo__anchor(href!="<?php home_url('/', 'relative'); ?>/")
+		span.gHeader-logo__txt <?php echo $site_title ?>
+	|<?php else: ?>
+	p.gHeader-logo: a.gHeader-logo__anchor(href!="<?php home_url('/', 'relative'); ?>/")
+		span.gHeader-logo__txt <?php echo $site_title ?>
+	|<?php endif; ?>
+	button.gHeader-hamburger(data-hamburger)
+		span.gHeader-hamburger-in
+			span.gHeader-hamburger__line--top
+			span.gHeader-hamburger__line--mid
+			span.gHeader-hamburger__line--btm
+	nav#gNav.gHeader-nav.gNav.is_close(role='navigation', itemscope, itemtype="http://www.schema.org/SiteNavigationElement"): .gNav-in
+		ul.gNav-list.cf
+			li.gNav-list__item(itemprop="name"): a.gNav-list__item-anchor.font__robot--bold(href!="<?php home_url('/', 'relative'); ?>/", itemprop="URL") HOME
+// /header#header
+|<div id="contents" data-pjax_container><main role="main" data-body_id='<?php echo $page_id; ?>'>

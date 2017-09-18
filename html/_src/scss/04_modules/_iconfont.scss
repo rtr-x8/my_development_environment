@@ -1,0 +1,49 @@
+/*! iconfont
+=========================================== */
+
+// 自動生成 ./html/_src/_template/_iconfont_class.scssからの自動生成
+
+/*
+#overview
+アイコンフォント
+
+アイコンフォント
+
+mixinに関して
+デフォルトでbeforeに挿入
+引数にafter指定でafterに挿入
+*/
+@font-face {
+	font-family: "iconfont";
+	src: url('../fonts/iconfont.eot');
+	src: url('../fonts/iconfont.eot?#iefix') format('eot'),
+	//url('../fonts/iconfont.woff2') format('woff2'),
+	url('../fonts/iconfont.woff') format('woff'),
+	url('../fonts/iconfont.ttf') format('truetype'),
+	url('../fonts/iconfont.svg#iconfont') format('svg');
+}
+
+%ext_iconfont_class {
+	@include iconfont_default();
+}
+
+.glyph--recruit01::before {@extend %ext_iconfont_class;content: "\EA01";}
+
+
+
+
+/*#styleguide
+
+
+```
+<ul class='cf'>
+
+<li class='dev_fl02'>
+<p class='glyph--recruit01'></p>
+<p><b>class名：</b><span class='styleguide__copy'>glyph--recruit01</span></p>
+<p><b>mixin名：</b><span class='styleguide__copy'>mix_glyph--recruit01</span></p>
+</li>
+
+</ul>
+```
+*/

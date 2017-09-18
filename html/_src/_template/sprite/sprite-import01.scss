@@ -1,0 +1,4 @@
+// 自動生成
+<% _.each(data, function(data) { %>
+@import "_sprite-<%= data %>";
+<% }); %>

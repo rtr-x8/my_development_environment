@@ -1,0 +1,24 @@
+@mixin iconfont_default() {
+	font-family: "<%= fontName %>";
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-style: normal !important;
+	font-variant: normal;
+	font-weight: normal !important;
+	speak: none;
+	text-decoration: none !important;
+	text-transform: none;
+	color: $base_text_color;
+	line-height: $base_icon_line_height;
+	font-size: $base_icon_size;
+}
+
+
+<% _.each(glyphs, function(glyph) { %>
+@mixin mix_<%= cssClass%><%= glyph.fileName %>($insert: before) {
+	&:#{$insert} {
+		@include iconfont_default();
+		content: "\<%= glyph.codePoint %>";
+	}
+}
+<% }); %>

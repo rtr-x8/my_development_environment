@@ -1,0 +1,10 @@
+mixin button(cls, txt, url, target)
+	-
+		var clss01 = cls + ' button--default';
+		var clss02 = cls + '-anchor button--default__anchor';
+	if target == false
+		p(class=clss01): a(href!=url, class=clss02): span!=txt
+	else
+		p(class=clss01): a(href!=url, target!=target, class=clss02)
+			span!=txt
+			i.ico

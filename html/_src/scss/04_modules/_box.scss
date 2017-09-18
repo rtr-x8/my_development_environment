@@ -1,0 +1,102 @@
+/*
+#overview
+Box、装飾、table
+
+箱型モジュール、
+*/
+
+.box--intro {
+	padding: 75px 0 0;
+	&__title.title--slant {
+		margin-bottom: 24px;
+	}
+	&__pic {
+		margin: 0 -15px 15px;
+		&-img {width: 100%;}
+	}
+	&__txt {}
+	@include mq(small, up) {
+		padding: 110px 0 0;
+		&__pic {
+			margin: 45px 0 30px;
+		}
+		&__txt {
+			padding: 0 50px;
+		}
+	}
+}
+
+.box--view {
+	margin-top: 32px;
+	&__img {
+		margin-bottom: 21px;
+		position: relative;
+		img{width: 100%;}
+	}
+	&__title {
+		color: #0d6fb8;
+		font-size: 20px;
+		letter-spacing: 0.05em;
+		line-height: 1.3;
+		position: relative;
+		margin-bottom: 20px;
+		position: relative;
+		&:after {
+			content: '';
+			position: absolute;
+			left: 1px;
+			bottom: -14px;
+			width: 40px;
+			height: 3px;
+			background-color: #0d6fb8;
+		}
+	}
+	&__in {}
+	&__txt {position: relative;}
+	@include mq(small, up) {
+		&:after {display: block;clear: both;content: '';}
+		padding-top: 37px;
+		&__img {
+			margin-bottom: 0;
+			float: right;
+			width: 42%;
+		}
+		&__in {
+			padding-top: 14px;
+			float: left;
+			box-sizing: border-box;
+			width: 100% - 42%;
+			padding-right: 50px;
+		}
+		&__title {
+			font-size: 24px;
+			margin-bottom: 40px;
+			left: 0;
+			padding: 0;
+			&:after {
+				width: 50px;
+				height: 4px;
+				left: 0;
+				bottom: -25px;
+			}
+		}
+		&:first-child {padding-top: 70px;}
+		&:nth-child(2n) & {
+			&__img {float: left;}
+			&__in {
+				float: right;
+				padding-right: 0;
+				padding-left: 50px;
+			}
+		}
+	}
+	@include mq(medium, up) {
+		&__title:after {
+			width: 0;
+			transition: 450ms $easeInExpo 1500ms;
+		}
+		&.is_aniamted &__title:after {
+			width: 50px;
+		}
+	}
+}
