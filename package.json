@@ -1,6 +1,6 @@
 {
-  "name": "work",
-  "version": "1.0.0",
+  "name": "my_dev_env_gulp",
+  "version": "3.0.0",
   "main": "gulpfile.js",
   "dependencies": {
     "gulp-cached": "^1.1.0",
@@ -67,16 +67,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "rtr-x8",
   "license": "ISC",
-  "description": "いい加減開発環境をまとめないとまずい。",
+  "description": "my_development_environment",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rtr-x8/my_development_environment_for_wordpress.git"
+    "url": "git+https://github.com/rtr-x8/my_development_environment.git"
   },
   "bugs": {
-    "url": "https://github.com/rtr-x8/my_development_environment_for_wordpress/issues"
+    "url": "https://github.com/rtr-x8/my_development_environment/issues"
   },
-  "homepage": "https://github.com/rtr-x8/my_development_environment_for_wordpress#readme",
+  "homepage": "https://github.com/rtr-x8/my_development_environment#readme",
   "keywords": []
 }
