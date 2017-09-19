@@ -15,9 +15,9 @@
 
 
 
-@mixin mix_glyph--recruit01($insert: before) {
+@mixin mix_mod_glyph--recruit01($insert: before) {
 	&:#{$insert} {
 		@include iconfont_default();
 		content: "\EA01";
 	}
-}
+}

@@ -8,7 +8,7 @@ const Header = require("../dom/header");
 const Load   = require("./load");
 const Ready = require("./ready");
 
-const _t     = require("./mousewheel");
+const _t     = this;
 const BODY_CLASS_PREFIX = 'body--';
 
 
@@ -43,7 +43,7 @@ module.exports.Init = function(){
 
 module.exports.SetSignature = function(){
 	//set signature
-	let body_id  = $('main').data('body_id');
+	let body_id  = $('[data-body_id]').attr('data-body_id');
 	let body_cls = BODY_CLASS_PREFIX + body_id;
 	
 	$('body').attr({

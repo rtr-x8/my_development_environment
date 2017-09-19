@@ -1,3 +1,5 @@
+
+$hamburger_line_color: #000;
 $gnav_hbgr_anime: 180ms;
 // cool time
 $gnav_hbgr_cool_anime: 180ms;
@@ -18,47 +20,12 @@ $gnav_timeline04: 100 - $gnav_hbgr_anime_per01;
 /*! #header
 =========================================== */
 .gHeader {	// default : data-color='w'
-	padding: 15px 15px 0;
-	box-sizing: border-box;
-	opacity: 0;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 99;
-	position: absolute;
-	.body--home &{
-		position: fixed;
-	}
 	&-logo {
-		position: relative;
-		width: 110px;
-		height: 23px;
-		@include mix_sprite--sp__logo01_w(before);
-		@include mix_sprite--sp__logo01_b(after);
-		&:before, &:after {
-			position: absolute;
-			z-index: 1;
-			@include transition01;
-		}
-		&:after {opacity: 0;}
 		&__anchor {
-			width: 110px;
-			display: block;
-			top: 0;
-			left: 0;
-			position: absolute;
-			z-index: 5;
-			display: block;
-			@include chikan;
-		}
-	}
-	&.is_sub_color &{
-		&-logo {
-			&:before {opacity: 0;}
-			&:after {opacity: 1;}
 		}
 	}
 	&-hamburger {
+		cursor: pointer;
 		box-sizing: content-box;
 		cursor: pointer;
 		background-color: transparent;
@@ -84,7 +51,7 @@ $gnav_timeline04: 100 - $gnav_hbgr_anime_per01;
 				left: 0;
 				width: 100%;
 				height: 2px;
-				background-color: #fff;
+				background-color: $hamburger_line_color;
 				display: block;
 			}
 			&--top {
@@ -115,50 +82,7 @@ $gnav_timeline04: 100 - $gnav_hbgr_anime_per01;
 			}
 		}
 	}
-	&-nav {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100vh;
-		background-color: rgba(#00afdb, .9);
-		#wrapper[data-gNav_condition='close'] & {
-			visibility: hidden;
-		}
-	}
-	
-	//data-color='b'
-	&[data-color='b'] &{
-		&-logo {
-			&:before {opacity: 0;}
-			&:after {opacity: 1;}
-		}
-		&-hamburger__line {
-			&--top, &--mid, &--btm {
-				background-color: #333;
-			}
-		}
-	}
 	@include mq(medium, up) {
-		padding: 30px 20px 0 40px;
-		&-logo {
-			float: left;
-			width: 134px;
-			height: 28px;
-			@include mix_sprite--pc__logo01_w(before);
-			@include mix_sprite--pc__logo01_b(after);
-		}
-		&-hamburger {display: none;}
-		&-nav {
-			position: static;
-			float: right;
-			background: none;
-			height: auto;
-			width: auto;
-			#wrapper[data-gNav_condition='close'] & {
-				visibility: visible;
-			}
-		}
 	}
 }
 @keyframes hamburger01{
@@ -196,40 +120,6 @@ $gnav_timeline04: 100 - $gnav_hbgr_anime_per01;
 /*! .gNav
 =========================================== */
 .gNav {
-	&-in {
-		display: table;
-		width: 100%;
-		height: inherit;
-	}
-	&-list {
-		display: table-cell;
-		vertical-align: middle;
-		text-align: center;
-		&__item {
-			&-anchor {
-				color: #fff;
-				font-size: 15px;
-				font-weight: bold;
-				line-height: 4.3;
-				display: block;
-			}
-		}
-	}
 	@include mq(medium, up) {
-		&-in {
-			display: block;
-		}
-		&-list {
-			&__item {
-				display: inline-block;
-				&:first-child {display: none;}
-				&-anchor {
-					line-height: 34px;
-					padding: 0 18px;
-					letter-spacing: 0.09em;
-					.gHeader[data-color="b"] &{color: #333;}
-				}
-			}
-		}
 	}
 }

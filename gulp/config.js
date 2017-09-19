@@ -114,9 +114,26 @@ module.exports = {
 			cascade: false
 		},
 		clean_opt: {
-			advanced:false,
-			keepBreaks:true,
-			sourceMap:true,
+			sourceMap: true,
+			ompatibility: 'ie8',
+			format: {
+				breaks: { // 改行設定
+					afterAtRule: true, // controls if a line break comes after an at-rule; e.g. `@charset`; defaults to `false`
+					afterBlockBegins: true, // controls if a line break comes after a block begins; e.g. `@media`; defaults to `false`
+					afterBlockEnds: false, // controls if a line break comes after a block ends, defaults to `false`
+					afterComment: true, // controls if a line break comes after a comment; defaults to `false`
+					afterProperty: false, // controls if a line break comes after a property; defaults to `false`
+					afterRuleBegins: false, // controls if a line break comes after a rule begins; defaults to `false`
+					afterRuleEnds: true, // controls if a line break comes after a rule ends; defaults to `false`
+					beforeBlockEnds: true, // controls if a line break comes before a block ends; defaults to `false`
+					betweenSelectors: false // セレクタの後
+				},
+				spaces: { // controls where to insert spaces
+					aroundSelectorRelation: false, // controls if spaces come around selector relations; e.g. `div > a`; defaults to `false`
+					beforeBlockBegins: false, // controls if a space comes before a block begins; e.g. `.block {`; defaults to `false`
+					beforeValue: false // controls if a space comes before a value; e.g. `width: 1rem`; defaults to `false`
+				}
+			},
 		},
 		sourcemap_opt: {
 			sourceRoot: '../../../scss',	// いつかnodeで取得したい

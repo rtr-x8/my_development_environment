@@ -12,11 +12,5 @@ const Click  = require("./click");
 module.exports.Bind = function() {
 	
 	Rwd.SetInterchange();
-
-	// scrollify 動いていないので
-	if( !$('body').hasClass('is_canvas_no_supoort') ) {
-		ScrSec.SetSize();
-
-		// console.log(Cfg.PIXIOBJ.app.stage)
-	}
+	
 };

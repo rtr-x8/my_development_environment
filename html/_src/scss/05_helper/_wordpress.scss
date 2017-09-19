@@ -1,32 +1,36 @@
 .wysiwyg {
     p {
-    display: block;
-    margin: 1em 0;
+        display: block;
+        margin: 1em 0;
     }
     blockquote {
-    display: block;
-    -webkit-margin-before: 1em;
-    -webkit-margin-after: 1em;
-    -webkit-margin-start: 40px;
-    -webkit-margin-end: 40px;
+        display: block;
+        -webkit-margin-before: 1em;
+        -webkit-margin-after: 1em;
+        -webkit-margin-start: 40px;
+        -webkit-margin-end: 40px;
     }
 
     .aligncenter {
-    display: block;
-    margin: 0 auto;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
     }
     .alignright { float: right;margin-left: 0; }
     .alignleft { float: left;margin-right: 0; }
-    h2 {@extend .box--view__title;margin-top: 1.5em;}
-    h3 {font-size: 20px;font-weight: bold;margin-bottom: 1.3em;margin-top: 1.5em;}
-    h4 {font-size: 18px;margin-bottom: 1.2em;margin-top: 1.5em;}
-    h5 {font-size: 16px;margin-bottom: 1.1em;font-weight: bold;margin-top: 1.5em;}
+    h3 {font-size: 200%;font-weight: bold;margin-bottom: 1.3em;margin-top: 1.5em;}
+    h4 {font-size: 180%;margin-bottom: 1.2em;margin-top: 1.5em;}
+    h5 {font-size: 160%;margin-bottom: 1.1em;font-weight: bold;margin-top: 1.5em;}
     h6 {margin-bottom: 1em;font-weight: bold;margin-top: 1.5em;}
+    h2 {@extend .mod_tit01 !optional;}
+    h3 {@extend .mod_tit02 !optional;}
+    h4 {@extend .mod_tit03 !optional;}
+    h5 {@extend .mod_tit04 !optional;}
     @include mq(small, up) {
-        h3 {font-size: 24px;}
-        h4 {font-size: 20px;}
-        h5 {font-size: 18px;}
-        h6 {font-size: 16px;}
+        h3 {font-size: 24%;}
+        h4 {font-size: 20%;}
+        h5 {font-size: 18%;}
+        h6 {font-size: 16%;}
     }
     img {
     height: auto;

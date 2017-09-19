@@ -6,5 +6,6 @@ const Rwd    = require("../utillity/responsive");
 
 module.exports.Bind = function() {
 	$(document).on('click', '[data-hamburger]', function() {
+		Header.ToggleHamburger();
 	});
 };

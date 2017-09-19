@@ -60,6 +60,7 @@ img {
 	}
 }
 #loader {
+	display: none;
 	opacity: 0;
 	body:not(#home) & {display: none !important;}
 	position: fixed;
@@ -109,6 +110,12 @@ table {
 }
 /*! form
 ------------------------------ */
+$form_inp_back_color: rgb(242, 242, 248);
+$form_focus_color: #146aac;
+$form_error_color: #fa4975;
+$form_paceholder_color: rgba(#4c4c4c, 0.5);
+
+
 input, select, button, textarea {
 	@extend %base_font;
 	border-width: 1px;
@@ -117,8 +124,8 @@ input, select, button, textarea {
 	outline: none;
 }
 %entry__inp__def {
-	background-color: rgb(242, 242, 248) !important;
-	box-shadow: 0 0 0 0 #146aac;
+	background-color: $form_inp_back_color !important;
+	box-shadow: 0 0 0 0 $form_focus_color;
 	cursor: pointer;
 	font-size: 16px;
 	width: 100%;
@@ -126,18 +133,18 @@ input, select, button, textarea {
 	box-sizing: border-box;
 	padding: .3em;
 	border: none !important;
-	padding-left: 12px;
+	padding-left: .3em;
 	&.wpcf7-not-valid {background-color: #fde5eb !important;}
 	@include transition01(box-shadow);
 	@include mq(small, up) {
 		padding: .3em 0.2em;
 	}
 	&:focus {
-		box-shadow: 0 0 2px 2px #146aac;
+		box-shadow: 0 0 2px 2px $form_focus_color;
 	}
 }
 .wpcf7-not-valid-tip {
-	color: #fa4975 !important;
+	color: $form_error_color !important;
 	font-size: 13px !important;
 	@include mq(small, up) {font-size: 14px !important;}
 
@@ -150,29 +157,28 @@ input, select, button, textarea {
 		height: 45px;
 	}
 }
-$paceholder_txt_color: rgba(#4c4c4c, 0.5)
 ::-webkit-input-placeholder {
-	color: $paceholder_txt_color;
+	color: $form_paceholder_color;
 	opacity: 1;
 }
 :-moz-placeholder {
-	color: $paceholder_txt_color;
+	color: $form_paceholder_color;
 }
 ::-moz-placeholder {
-	color: $paceholder_txt_color;
+	color: $form_paceholder_color;
 	opacity: 1;
 }
 :-ms-input-placeholder {
-	color: $paceholder_txt_color;
+	color: $form_paceholder_color;
 }
 :placeholder-shown {
-	color: $paceholder_txt_color;
+	color: $form_paceholder_color;
 }
 input:-webkit-autofill {
-	background-color: #eee !important;
+	background-color: $form_inp_back_color !important;
 	box-shadow: 0 0 0px 1000px #eee inset;
 	&:focus {
-		box-shadow: 0 0 0px 1000px #eee inset, 0 0 2px 2px #146aac;
+		box-shadow: 0 0 0px 1000px #eee inset, 0 0 2px 2px $form_focus_color;
 	}
 }
 input {cursor: pointer;}
@@ -225,7 +231,7 @@ option {
 	background-color: #fff;
 }
 div.wpcf7-validation-errors {
-	border: 1px solid #146aac !important;
+	border: 1px solid $form_focus_color !important;
 	margin-top: 35px;
 	    margin-bottom: 50px;
 }

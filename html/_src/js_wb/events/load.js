@@ -5,5 +5,5 @@ const Header = require("../dom/header");
 
 module.exports.Bind = function(pjax_active) {
 	// pjax_active: true or false
-	
+	Utill.LazyLoad();
 };

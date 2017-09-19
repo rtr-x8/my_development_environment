@@ -1,6 +1,10 @@
 block vars
 |<?php require_once($_SERVER['DOCUMENT_ROOT'] . '/header.php'); ?>
+block settings
+if extend_main_tag === true
+	|<main role="main">
 block content
-|</main>
+if extend_main_tag === true
+	|</main>
 block outerMain
 |<?php require_once($_SERVER['DOCUMENT_ROOT'] . '/footer.php'); ?>

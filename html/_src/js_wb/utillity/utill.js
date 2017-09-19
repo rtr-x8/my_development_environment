@@ -77,7 +77,6 @@ module.exports.LazyLoad = function(){
 // 属性値切り替え。a,bナシならtrue or false
 module.exports.ToggleAttr = function($e, attr, a, b){
 	if( $e===undefined || attr===undefined ) return;
-
 	let p1 = a===undefined? true: a;
 	let p2 = b===undefined? false: b;
 	let c  = $e.attr(attr);
