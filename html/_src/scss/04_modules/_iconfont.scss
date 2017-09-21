@@ -27,7 +27,7 @@ mixinに関して
 	@include iconfont_default();
 }
 
-.mod_glyph--recruit01::before {@extend %ext_iconfont_class;content: "\EA01";}
+.mod_glyph--rtr-x8::before {@extend %ext_iconfont_class;content: "\EA01";}
 
 
 
@@ -39,9 +39,9 @@ mixinに関して
 <ul class='cf'>
 
 <li class='dev_fl02'>
-<p class='mod_glyph--recruit01'></p>
-<p><b>class名：</b><span class='styleguide__copy'>mod_glyph--recruit01</span></p>
-<p><b>mixin名：</b><span class='styleguide__copy'>mix_mod_glyph--recruit01</span></p>
+<p class='mod_glyph--rtr-x8'></p>
+<p><b>class名：</b><span class='styleguide__copy'>mod_glyph--rtr-x8</span></p>
+<p><b>mixin名：</b><span class='styleguide__copy'>mix_mod_glyph--rtr-x8</span></p>
 </li>
 
 </ul>

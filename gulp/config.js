@@ -47,6 +47,7 @@ var settings = {
 		url : 'http://a.com',
 	},
 	cmn_prefix: 'mod_',
+	cmn_midfix: '--',
 }
 
 // iconfont 設定
@@ -287,7 +288,7 @@ module.exports = {
 			template: src_root + '_template/styleguide/index.ejs',
 			includeAssetPath: '',
 			params: {
-				file_info: '<?php $page_id = "home"; ?>',	//変数とかあれば
+				file_info: '<?php $page_id = "home"; $page_name = "スタイルガイド" ?>',	//変数とかあれば
 				nav_position: 'bottom',						//top or bottom
 				before_content_tags: '<div class="test">',	//header読みこんだ後に記述
 				after_content_tags: '</div></main>',		//fo0ter読みこむ前の記述

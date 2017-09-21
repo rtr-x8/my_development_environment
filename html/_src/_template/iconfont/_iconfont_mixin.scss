@@ -8,8 +8,8 @@
 	speak: none;
 	text-decoration: none !important;
 	text-transform: none;
-	color: $base_text_color;
-	line-height: $base_icon_line_height;
+	color: inherit;
+	line-height: 1.05;
 	font-size: $base_icon_size;
 }
 
