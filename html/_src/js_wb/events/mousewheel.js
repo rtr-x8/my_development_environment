@@ -12,11 +12,11 @@ module.exports.Bind = function(e) {
 
 module.exports.GetDirection = function(e) {
 	if( !Utill.IsPage('home') ) return;
-	e.preventDefault();
+	// e.preventDefault();
 	var delta = e.originalEvent.deltaY ? -(e.originalEvent.deltaY) : e.originalEvent.wheelDelta ? e.originalEvent.wheelDelta : -(e.originalEvent.detail);
 	if (delta < 0){
-		console.log(1);
+		// console.log(1);
 	} else {
-		console.log(-1);
+		// console.log(-1);
 	}
 };
