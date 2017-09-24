@@ -11,8 +11,8 @@
 |<!DOCTYPE html>
 |<html lang="ja">
 head
-	// meta
 	meta(charset='utf-8')
+	// meta
 	title <?php echo $page_title; ?>
 	meta(name="viewport" content="width=device-width,user-scalable=yes")
 	meta(name="description", content!="<?php echo $site_dscription; ?>")
@@ -20,9 +20,9 @@ head
 	// css
 	link(rel='stylesheet', href!='<?php echo get_stylesheet_directory_uri(); ?>/css/reset.css')
 	link(rel='stylesheet', href!='<?php echo get_stylesheet_directory_uri(); ?>/css/bundle.css')
-	//-link(rel='subresource', href!='<?php echo get_stylesheet_directory_uri(); ?>/css/lazyload.css')
 	link(rel='subresource', href!="//fonts.googleapis.com/earlyaccess/notosansjapanese.css")
 	link(rel='subresource', href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900")
+	//-link(rel='subresource', href!='<?php echo get_stylesheet_directory_uri(); ?>/css/lazyload.css')
 	// canonical
 	link(rel="canonical", href!="http://<?php echo $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>")
 	// SNS
@@ -47,11 +47,9 @@ head
 	<![endif]-->
 |<body id='<?php echo $page_id; ?>' class='body--<?php echo $page_id; ?>'>
 #loader
-	#loader__bar
-	p#loader__txt.font__robot--regular 000
 #js_media_query
 |<div id="wrapper" data-gNav_condition='close'>
-header#gHeader.gHeader.cf(role="banner", itemscope, itemtype="http://schema.org/WPHeader", data-color='w')
+header#gHeader.gHeader.cf(role="banner", itemscope, itemtype="http://schema.org/WPHeader")
 	|<?php if( $page_id === 'home' ): ?>
 	h1.gHeader-logo: a.gHeader-logo__anchor(href!="<?php home_url('/', 'relative'); ?>/")
 		span.gHeader-logo__txt <?php echo $site_title ?>
@@ -66,6 +64,6 @@ header#gHeader.gHeader.cf(role="banner", itemscope, itemtype="http://schema.org/
 			span.gHeader-hamburger__line--btm
 	nav#gNav.gHeader-nav.gNav.is_close(role='navigation', itemscope, itemtype="http://www.schema.org/SiteNavigationElement"): .gNav-in
 		ul.gNav-list.cf
-			li.gNav-list__item(itemprop="name"): a.gNav-list__item-anchor.font__robot--bold(href!="<?php home_url('/', 'relative'); ?>/", itemprop="URL") HOME
+			li.gNav-list__item(itemprop="name"): a.gNav-list__item-anchor(href!="<?php home_url('/', 'relative'); ?>/", itemprop="URL") HOME
 // /header#header
 |<div id="contents" data-pjax_container><div id="main" data-body_id='<?php echo $page_id; ?>'>
