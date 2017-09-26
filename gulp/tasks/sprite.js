@@ -52,7 +52,7 @@ gulp.task('sprite', function() {
 						classNamePre: 'sprite--' + folder + '__',
 						imgName: config.sprite.smith_opt.img_prefix + folder + '.png',
 						imgPath : config.sprite.smith_opt.path_from_css,
-						for_sp: folder === 'sp'? true: false,
+						for_sp: folder.slice(-2) === 'sp'? true: false,
 					}))
 					.pipe(rename({
 						basename: config.sprite.smith_opt.scss_prefix + folder
@@ -67,7 +67,7 @@ gulp.task('sprite', function() {
 						classNamePre: 'sprite--' + folder + '__',
 						imgName: config.sprite.smith_opt.img_prefix + folder + '.png',
 						imgPath : config.sprite.smith_opt.path_from_css,
-						for_sp: folder === 'sp'? true: false,
+						for_sp: folder.slice(-2) === 'sp'? true: false,
 					}))
 					.pipe(rename({
 						basename: config.sprite.smith_opt.scss_prefix + folder

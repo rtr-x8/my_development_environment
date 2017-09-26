@@ -8,6 +8,7 @@ var sass         = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var CleanCSS     = require('gulp-clean-css');
 var browserSync  = require('browser-sync');
+var csscomb      = require('gulp-csscomb');
 
 //CSS系の処理
 //-------------------------------------------------------------------------------
