@@ -1,0 +1,5 @@
+/*! #mainvidual
+=========================================== */
+.mv-under {
+	@include mq(medium, up) {}
+}

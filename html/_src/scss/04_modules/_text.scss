@@ -1,0 +1,71 @@
+/*
+#overview
+テキスト
+
+テキスト類もろもろ
+リスト、インラインリンク、リスト
+*/
+
+/*#styleguide
+
+
+* * *
+
+```
+```
+*/
+
+//	'PSD上の名前'：'実際のウェイト'
+$robot_weight_arr: (
+	thin   : 100,
+	light  : 300,
+	regular: 400,
+	medium : 500,
+	bold   : 600,
+	black  : 900,
+);
+
+%robot {
+	font-family: 'Roboto', sans-serif !important;
+}
+@mixin robot($weight) {
+	@extend %robot;
+	font-weight: map-get($robot_weight_arr, $weight) !important;
+}
+//
+
+.font__robot--thin    {@include robot(thin);}
+.font__robot--light   {@include robot(light);}
+.font__robot--regular {@include robot(regular);}
+.font__robot--medium  {@include robot(medium);}
+.font__robot--bold    {@include robot(bold);}
+.font__robot--black   {@include robot(black);}
+
+
+
+//	'PSD上の名前'：'実際のウェイト'
+$ozwald_weight_arr: (
+	exLight  : 200,
+	light    : 300,
+	regular  : 400,
+	medium   : 500,
+	semiBold : 600,
+	bold     : 700,
+);
+%ozwald {
+	font-family: 'Oswald', sans !important;
+}
+@mixin ozwald($weight) {
+	@extend %ozwald;
+	font-weight: map-get($ozwald_weight_arr, $weight) !important;
+}
+//
+
+.font__ozwald--exLight  {@include ozwald(exLight);}
+.font__ozwald--light    {@include ozwald(light);}
+.font__ozwald--regular  {@include ozwald(regular);}
+.font__ozwald--medium   {@include ozwald(medium);}
+.font__ozwald--semiBold {@include ozwald(semiBold);}
+.font__ozwald--bold     {@include ozwald(bold);}
+
+

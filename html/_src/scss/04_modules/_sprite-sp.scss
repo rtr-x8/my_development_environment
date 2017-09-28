@@ -1,0 +1,98 @@
+// 自動生成
+
+/*
+#overview
+スプライト [ sp ]
+
+スプライト [ sp ]
+*/
+
+
+/*#styleguide
+
+ディレクトリ名が「sp」だとすべて半分のサイズになります。　　　　
+あらかじめ2倍の画像を入れるように。
+
+mixinに関して
+デフォルトでbeforeに挿入
+引数にafter指定でafterに挿入
+falseを指定すればその要素
+
+```
+<table class='dev_table'>
+<tr>
+<th>アイコン</th>
+<th>クラス名</th>
+<th>mixin名</th>
+</tr>
+
+<tr>
+<td>
+<div class='sprite--sp__arw01'></div>
+</td>
+<td>
+<span class='styleguide__copy'>sprite--sp__arw01</span>
+</td>
+<td>
+<span class='styleguide__copy'>mix_sprite--sp__arw01</span>
+</td>
+</tr>
+
+</table>
+```
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+%ext_sprite_sp {
+    background-image: url(../img/module/sprites_sp.png);
+    background-repeat: no-repeat;
+    content: '';
+    display: inline-block;
+}
+
+
+
+.sprite--sp__arw01{
+    &:before {
+        @extend %ext_sprite_sp;
+        
+        width: 25px;
+        height: 7px;
+        background-position: 0px 0px;
+        background-size: 25px 7px;
+        
+    }
+}
+    //名前
+    //sprite.name         : arw01
+    //x座標
+    //sprite.x            : 0
+    //y座標
+    //sprite.y            : 0
+    //実際にpositionで指定するx座標
+    //sprite.offset_x     : 0
+    //実際にpositionで指定するy座標
+    //sprite.offset_y     : 0
+    //その要素の幅
+    //sprite.width        : 50
+    //その要素の高さ
+    //sprite.height       : 14
+    //画像自体の幅
+    //sprite.total_width  : 50
+    //画像自体の高さ
+    //sprite.total_height : 14
+    //画像名
+    //sprite.image        : sprites_sp.png
+
+
+

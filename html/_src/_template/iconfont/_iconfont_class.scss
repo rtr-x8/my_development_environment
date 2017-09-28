@@ -1,0 +1,49 @@
+/*! iconfont
+=========================================== */
+
+// 自動生成 ./html/_src/_template/_iconfont_class.scssからの自動生成
+
+/*
+#overview
+アイコンフォント
+
+アイコンフォント
+
+mixinに関して
+デフォルトでbeforeに挿入
+引数にafter指定でafterに挿入
+*/
+@font-face {
+	font-family: "<%= fontName %>";
+	src: url('<%= fontPath %><%= fontName %>.eot');
+	src: url('<%= fontPath %><%= fontName %>.eot?#iefix') format('eot'),
+	//url('<%= fontPath %><%= fontName %>.woff2') format('woff2'),
+	url('<%= fontPath %><%= fontName %>.woff') format('woff'),
+	url('<%= fontPath %><%= fontName %>.ttf') format('truetype'),
+	url('<%= fontPath %><%= fontName %>.svg#<%= fontName %>') format('svg');
+}
+
+%ext_iconfont_class {
+	@include iconfont_default();
+}
+
+<% _.each(glyphs, function(glyph) { %>.<%= cssClass%><%= glyph.fileName %>::before {@extend %ext_iconfont_class;content: "\<%= glyph.codePoint %>";}
+<% }); %>
+
+
+
+/*#styleguide
+
+
+```
+<ul class='cf'>
+<% _.each(glyphs, function(glyph) { %>
+<li class='dev_fl02'>
+<p class='<%= cssClass%><%= glyph.fileName %>'></p>
+<p><b>class名：</b><span class='styleguide__copy'><%= cssClass%><%= glyph.fileName %></span></p>
+<p><b>mixin名：</b><span class='styleguide__copy'>mix_<%= cssClass%><%= glyph.fileName %></span></p>
+</li>
+<% }); %>
+</ul>
+```
+*/

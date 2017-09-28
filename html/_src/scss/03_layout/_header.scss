@@ -1,0 +1,125 @@
+
+$hamburger_line_color: #000;
+$gnav_hbgr_anime: 180ms;
+// cool time
+$gnav_hbgr_cool_anime: 180ms;
+// メニューアニメ開始 -> メニューアニメ終了
+$gnav_anime: 450ms;
+
+$gnav_toggle_anime_total: $gnav_hbgr_anime + $gnav_hbgr_cool_anime;
+$gnav_anime_total: ($gnav_hbgr_anime + $gnav_hbgr_cool_anime) * 2 + $gnav_anime;
+
+$gnav_hbgr_anime_per01: round-decimal($gnav_hbgr_anime / $gnav_anime_total, 4) * 100;
+$gnav_hbgr_cool_anime_per02: round-decimal($gnav_hbgr_cool_anime / $gnav_anime_total, 4) * 100;
+
+$gnav_timeline01: $gnav_hbgr_anime_per01;
+$gnav_timeline02: $gnav_hbgr_anime_per01 + $gnav_hbgr_cool_anime_per02;
+$gnav_timeline03: 100 - $gnav_hbgr_anime_per01 - $gnav_hbgr_cool_anime_per02;
+$gnav_timeline04: 100 - $gnav_hbgr_anime_per01;
+
+/*! #header
+=========================================== */
+.gHeader {	// default : data-color='w'
+	&-logo {
+		&__anchor {
+		}
+	}
+	&-hamburger {
+		cursor: pointer;
+		box-sizing: content-box;
+		cursor: pointer;
+		background-color: transparent;
+		height: 23px;
+		width: 23px;
+		z-index: 9;
+		padding: 15px 16px 0;
+		top: 0;
+		right: 0;
+		position: absolute;
+		transition: right $gnav_anime ease $gnav_toggle_anime_total;
+		border: none;
+		&-in {
+			display: block;
+			width: 24px;
+			height: 16px;
+			position: relative;
+		}
+		&__line {
+			&--top, &--mid, &--btm {
+				position: absolute;
+				display: block;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				background-color: $hamburger_line_color;
+				display: block;
+			}
+			&--top {
+				top: 0;
+			}
+			&--mid {
+				top: 7px;
+				transition: all $gnav_hbgr_anime;
+				opacity: 0;
+			}
+			&--btm {
+				bottom: 0;
+			}
+		}
+		#wrapper[data-gNav_condition='close'] & {
+			right: 0;
+			&__line {
+				&--top {animation: hamburger01 $gnav_anime_total forwards;}
+				&--mid {opacity: 1;}
+				&--btm {animation: hamburger02 $gnav_anime_total forwards;}
+			}
+		}
+		#wrapper[data-gNav_condition='open'] & {
+			&__line {
+				&--top {animation: hamburger01_open $gnav_anime_total forwards;}
+				&--mid {opacity: 0;}
+				&--btm {animation: hamburger02_open $gnav_anime_total forwards;}
+			}
+		}
+	}
+	@include mq(medium, up) {
+	}
+}
+@keyframes hamburger01{
+	0%						{transform: translateY(7px) rotate(45deg)}
+	#{$gnav_timeline01}%	{transform: translateY(7px) rotate(0)}
+	#{$gnav_timeline02}%	{transform: translateY(7px) rotate(0)}
+	#{$gnav_timeline03}%	{transform: translateY(7px) rotate(0)}
+	#{$gnav_timeline04}%	{transform: translateY(7px) rotate(0)}
+	100%					{transform: translateY(0) rotate(0)}
+}
+@keyframes hamburger01_open {
+	0%						{transform: translateY(0) rotate(0)}
+	#{$gnav_timeline01}%	{transform: translateY(7px) rotate(0)}
+	#{$gnav_timeline02}%	{transform: translateY(7px) rotate(0)}
+	#{$gnav_timeline03}%	{transform: translateY(7px) rotate(0)}
+	#{$gnav_timeline04}%	{transform: translateY(7px) rotate(0)}
+	100%					{transform: translateY(7px) rotate(45deg)}
+}
+@keyframes hamburger02 {
+	0%						{transform: translateY(-7px) rotate(-45deg)}
+	#{$gnav_timeline01}%	{transform: translateY(-7px) rotate(0)}
+	#{$gnav_timeline02}%	{transform: translateY(-7px) rotate(0)}
+	#{$gnav_timeline03}%	{transform: translateY(-7px) rotate(0)}
+	#{$gnav_timeline04}%	{transform: translateY(-7px) rotate(0)}
+	100%					{transform: translateY(0) rotate(0)}	
+}
+@keyframes hamburger02_open {
+	0%						{transform: translateY(0) rotate(0)}
+	#{$gnav_timeline01}%	{transform: translateY(-7px) rotate(0)}
+	#{$gnav_timeline02}%	{transform: translateY(-7px) rotate(0)}
+	#{$gnav_timeline03}%	{transform: translateY(-7px) rotate(0)}
+	#{$gnav_timeline04}%	{transform: translateY(-7px) rotate(0)}
+	100%					{transform: translateY(-7px) rotate(-45deg)}
+}
+/*! .gNav
+=========================================== */
+.gNav {
+	@include mq(medium, up) {
+	}
+}

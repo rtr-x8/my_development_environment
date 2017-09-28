@@ -1,0 +1,28 @@
+// 自動生成
+
+@mixin mix_sprite--pc__arw01($insert: before) {
+	@if $insert == false {
+		background-repeat: no-repeat;
+		background-image: url(../img/module/sprites_pc.png);
+		
+		background-position: 0px 0px;
+		background-size: auto;
+		width: 25px;
+		height: 7px;
+		
+		display: block;
+	} @else {
+		&:#{$insert} {
+			content: '';
+			background-repeat: no-repeat;
+			background-image: url(../img/module/sprites_pc.png);
+			
+			background-position: 0px 0px;
+			background-size: auto;
+			width: 25px;
+			height: 7px;
+			
+			display: inline-block;
+		}
+	}
+}

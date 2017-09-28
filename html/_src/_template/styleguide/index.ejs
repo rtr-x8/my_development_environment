@@ -1,0 +1,56 @@
+<style>.<%-params.calss_prefix%>headding01,.<%-params.calss_prefix%>headding02,.<%-params.calss_prefix%>headding03,.<%-params.calss_prefix%>headding04,.<%-params.calss_prefix%>headding05,.<%-params.calss_prefix%>headding06,.<%-params.calss_prefix%>wrapper--ov h1,.<%-params.calss_prefix%>wrapper--ov h2,.<%-params.calss_prefix%>wrapper--ov h3,.<%-params.calss_prefix%>wrapper--ov h4,.<%-params.calss_prefix%>wrapper--ov h5,.<%-params.calss_prefix%>wrapper--ov h6{font-weight:700;margin-bottom:1em;padding:10px 10px 0}.<%-params.calss_prefix%>labelItem,.<%-params.calss_prefix%>pre:before,.<%-params.calss_prefix%>preview:before{display:inline-block;padding:3px 1em;background-color:#eee}.<%-params.calss_prefix%>wrapper--ov h1{font-size:2.5rem}.<%-params.calss_prefix%>wrapper--ov h2{font-size:2.3rem}.<%-params.calss_prefix%>wrapper--ov h3{font-size:2rem}.<%-params.calss_prefix%>wrapper--ov h4{font-size:1.8rem}.<%-params.calss_prefix%>wrapper--ov h5{font-size:1.4rem}.<%-params.calss_prefix%>wrapper--ov h6{font-size:1rem}.<%-params.calss_prefix%>wrapper--ov li,.<%-params.calss_prefix%>wrapper--ov ol,.<%-params.calss_prefix%>wrapper--ov ul{list-style:disc inside}.<%-params.calss_prefix%>wrapper--ov strong{font-weight:700;padding:0 .1em}.<%-params.calss_prefix%>wrapper--ov blockquote,.<%-params.calss_prefix%>wrapper--ov q{padding:1em;margin:1em;border-left:2px solid #ddd}.<%-params.calss_prefix%>wrapper--ov pre{padding:1em;background-color:#eee}.<%-params.calss_prefix%>headding01{font-size:2rem}.<%-params.calss_prefix%>headding02{font-size:1.8rem}.<%-params.calss_prefix%>headding03{font-size:1.6rem}.<%-params.calss_prefix%>headding04{font-size:1.4rem}.<%-params.calss_prefix%>headding05{font-size:1.2rem}.<%-params.calss_prefix%>comment,.<%-params.calss_prefix%>headding06{font-size:1rem}.<%-params.calss_prefix%>comment{margin:1em 0;padding:0 10px}.<%-params.calss_prefix%>file{font-size:.75rem}.<%-params.calss_prefix%>article{padding:50px 0}.<%-params.calss_prefix%>article+.<%-params.calss_prefix%>article{border-top:8px solid #ddd}.<%-params.calss_prefix%>pre,.<%-params.calss_prefix%>preview{border-top:2px solid #f0f0f0;background-color:#fff}.<%-params.calss_prefix%>labelList{margin:1em 0 1em -3px;padding:0 5px}.<%-params.calss_prefix%>labelList:after{display:block;clear:both;content:''}.<%-params.calss_prefix%>labelItem{border-radius:3px;margin:3px 0 0 3px}.<%-params.calss_prefix%>previewIn{padding:15px 0}.<%-params.calss_prefix%>preview:before{content:'preview'}.<%-params.calss_prefix%>pre{margin-top:10px;padding:25px 15px;display:block;position:relative}.<%-params.calss_prefix%>pre:before{position:absolute;top:0;left:0;content:'code'}.<%-params.calss_prefix%>code{display:block;padding:1em;background-color:#ddd;font-size:1rem;overflow-x:scroll}.<%-params.calss_prefix%>navi--top{top:0}.<%-params.calss_prefix%>navi--bottom{bottom:0}.<%-params.calss_prefix%>navi_item{display:inline-block}.<%-params.calss_prefix%>navi_item a{text-decoration:none;display:block;padding:.5em 1em;color:#fff;font-weight:700;font-size:1rem;-webkit-transition:all .2s ease;transition:all .2s ease}.<%-params.calss_prefix%>navi_item a:hover{text-shadow:0 0 3px #fff}.<%-params.calss_prefix%>navi_item a.<%-params.calss_prefix%>active{color:#00f}.<%-params.calss_prefix%>navi--bottom,.<%-params.calss_prefix%>navi--top{position:fixed;width:100%;left:0;background-color:#bbb;z-index:999999}</style>
+<%-params.file_info%>
+<?php require_once( $_SERVER['DOCUMENT_ROOT'] . '/header.php'); ?>
+<% if(params.before_content_tags) { %>
+<%- params.before_content_tags %>
+<% } %>
+<% if(overview) {%>
+<div class="<%-params.calss_prefix%>wrapper--ov">
+	<%-current%>
+</div>
+<% } else { %>
+<div class="<%-params.calss_prefix%>wrapper">
+	<p class="<%-params.calss_prefix%>headding01"><%-current.fileName%></p>
+	<i class="<%-params.calss_prefix%>file"><%-current.file%></i>
+	<% if (current.overview) { %>
+	<p class="<%-params.calss_prefix%>comment"><%-current.overview.comment%></p>
+	<% } %>
+
+	<% if(current.sections) { %>
+		<% current.sections.forEach(function(section) { %>
+		<div class="<%-params.calss_prefix%>article">
+			<p class="<%-params.calss_prefix%>headding03"><%- section.title %></p>
+			<ul class="<%-params.calss_prefix%>labelList">
+				<% section.attributes.forEach(function(attribute) {%>
+				<li class="<%-params.calss_prefix%>labelItem"><%=attribute%></li>
+				<% }); %>
+			</ul>
+			<p class="<%-params.calss_prefix%>comment"><%- section.comment %></p>
+			<div class="<%-params.calss_prefix%>preview">
+				<div class="<%-params.calss_prefix%>previewIn"><%- section.code %></div>
+			</div>
+			<pre class="<%-params.calss_prefix%>pre">
+				<code class="<%-params.calss_prefix%>code <%-params.calss_prefix%>copy"><%= section.code %></code>
+			</pre>
+		</div>
+		<% }) %>
+	<% } %>
+</div>
+<% } %>
+<div class="<%-params.calss_prefix%>navi--<%-params.nav_position%>">
+	<ul class="<%-params.calss_prefix%>navi_list">
+		<li class="<%-params.calss_prefix%>navi_item"><a href="./index.php"><%=title%> - Overview</a></li>
+		<% files.forEach(function(file) { %>
+		<li class="<%-params.calss_prefix%>navi_item"><a class='<%if(helpers.isCurrent(current,file)){%> <%-params.calss_prefix%>active<%}%>' href='<%= file.dirs[file.dirs.length-1].split("/")[file.dirs[file.dirs.length-1].split("/").length-1].replace(".scss", "").substr(1);  %>.php'>
+			<% if (file.overview) { %><%- file.overview.title %><% } else { %><%- file.fileName %><% } %></a></li>
+		<% }) %>
+	</ul>
+</div>
+<% if(params.after_content_tags){ %>
+<%- params.after_content_tags %>
+<% } %>
+<?php require_once( $_SERVER['DOCUMENT_ROOT'] . '/footer.php'); ?>
+<% if(params.jquery) { %>
+<script src="//code.jquery.com/jquery-<%= params.jquery %>.js"></script>
+<% } %>
+<script>(function(){var t,e,n;$(document).ready(function(){return n()}),$(window).on("resize",function(){return n()}),$(".<%-params.calss_prefix%>copy").on("click",function(){return e(this)}),n=function(){var t;return $(".<%-params.calss_prefix%>navi--top").length?(t=$(".<%-params.calss_prefix%>navi--top").innerHeight()+"px",$("html").css({"padding-top":t})):(t=$(".<%-params.calss_prefix%>navi--bottom").innerHeight()+"px",$("html").css({"padding-bottom":t}))},e=function(e){var n,o,i;return n=document.createRange(),n.selectNodeContents(e),i=window.getSelection(),i.removeAllRanges(),i.addRange(n),o=document.execCommand("copy"),t("Copied"),o},t=function(t){var e;return e='<p id="<%-params.calss_prefix%>alert" style="position: fixed; top: 45%; left: 50%; margin-left: -100px; padding: 1em; font-size: 15px; background-color: red; color: #eee; width: 200px; text-align: center; letter-spacing: 0.1em">'+t+"</p>",$("body").append(e),setTimeout(function(){return $("#<%-params.calss_prefix%>alert").fadeOut().remove()},1e3)}}).call(this);</script>

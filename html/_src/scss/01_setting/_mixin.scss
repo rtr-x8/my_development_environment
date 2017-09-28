@@ -1,0 +1,103 @@
+@import 'mixin_iconfont';
+
+@mixin transition01($prop: all) {
+	transition: $prop .3s ease;
+}
+
+@mixin chikan() {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+@mixin opa() {
+	opacity: 1;
+	&:hover {
+		opacity: .8;
+		transition: opacity .2s ease;
+		cursor: pointer;
+	}
+}
+
+@mixin textWrap($size: 2px, $blur: 2px, $color: #fff) {
+	text-shadow:
+		 #{$size}  0        $blur $color,
+		 #{$size}  #{$size} $blur $color,
+		 0         #{$size} $blur $color,
+		-#{$size}  #{$size} $blur $color,
+		-#{$size}  0        $blur $color,
+		-#{$size} -#{$size} $blur $color,
+		0         -#{$size} $blur $color,
+		-#{$size}  0        $blur $color
+	;
+}
+
+//ページング、ローディング以外のベース部。
+@mixin z-index-base($layerNumber, $important: false) {
+	$val : $layerNumber * $z-index-base-difference + $z-index-base-min;
+	@if        $val > $z-index-base-max {	//500以上の時
+		$val: $z-index-base-max;
+	} @else if $val < $z-index-base-min{	//100以下の時
+		$val: $z-index-base-min;
+	}
+	@if $important == true {
+		z-index: $val !important;
+	} @else {
+		z-index: $val;
+	}
+}
+//ページング、ローディング、javascriptで動く部分
+@mixin z-index-script($layerNumber, $important: false) {
+	$val : $layerNumber * $z-index-script-difference + $z-index-script-min;
+	@if        $val > $z-index-script-max {	//
+		$val: $z-index-script-max;
+	} @else if $val < $z-index-script-min{	//
+		$val: $z-index-script-min;
+	}
+	@if $important == true {
+		z-index: $val !important;
+	} @else {
+		z-index: $val;
+	}
+}
+
+//pxからvwを取得する。
+//使い方
+//@include px2vw('font-size', 30);
+@mixin px2vw01($property, $size: 13) {
+	#{$property}: $size * 1px;
+	#{$property}:get_vw($size);
+}
+
+@mixin px2vw02($property, $size01, $size02) {
+	#{$property}: $size01 * 1px $size02 * 1px;
+	#{$property}:get_vw03($size01,$size02);
+}
+
+@mixin px2vw04($property, $size01, $size02, $size03, $size04) {
+	#{$property}: $size01 * 1px $size02 * 1px $size01 * 1px $size04 * 1px;
+	#{$property}:get_vw02($size01,$size02,$size03,$size04);
+}
+
+
+
+//%からvwを取得
+@mixin per2vw($property, $size, $width: 290) {
+	#{$property}: $size / $width * 100%;
+	#{$property}:get_vw($size);
+}
+
+@mixin logosvg(){
+	.cls-1{fill:#036eb8;}.cls-2{fill:#2ea7e0;}
+}
+
+// media query
+@mixin mq($range, $direction: up) {
+	// $direction: up, down
+	$query: if($direction==down, 'max-width: ', 'min-width: ');
+	$width: map-get($breakpoint, $range);
+	$width: if($direction==down, $width - 1px, $width);
+	@media ( $query + #{$width} ) {
+		@content;
+	}
+}

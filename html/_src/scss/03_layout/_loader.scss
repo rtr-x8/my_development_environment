@@ -1,0 +1,31 @@
+/*! loader
+=========================================== */
+.site-loader {
+	background-color: #fff;
+	position: fixed;
+	z-index: 99999;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	width: 100vw;
+	display: table;
+	opacity: 1;
+	&__cell {
+		display: table-cell;
+		height: inherit;
+		vertical-align: middle;
+		padding-bottom: 50px;
+		opacity: 0;
+		//padding-right: 50px;
+		svg {
+			width: 207px;
+			margin: 0 auto;
+			display: block;
+		}
+	}
+	&.is_hidden {
+		opacity: 0;
+		visibility: hidden;		
+	}
+}

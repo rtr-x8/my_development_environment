@@ -1,0 +1,45 @@
+/*
+#overview
+Box、装飾、table
+
+箱型モジュール、
+*/
+
+
+
+/*! --------------------------- */
+
+
+
+
+
+
+/*#styleguide
+.cmn_wrap01
+
+PCで幅1000pxで中央表示
+
+```
+<div class='cmn_wrap01'>.cmn_wrap01</div>
+```
+*/
+
+.wrap--default {
+	padding-left: 20px !important;
+	padding-right: 20px !important;
+	@include mq(small, up) {
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+	@include mq(medium, up) {
+		padding-left: 60px !important;
+		padding-right: 60px !important;		
+	}
+}
+
+.wrap--secondary {
+	// for under
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}

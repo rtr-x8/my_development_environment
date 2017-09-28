@@ -1,0 +1,110 @@
+// 自動生成
+<%
+    //スタイルガイド用ループ
+%>
+/*
+#overview
+スプライト [ <%= spriteName %> ]
+
+スプライト [ <%= spriteName %> ]
+*/
+
+
+/*#styleguide
+<% if (for_sp) { %>
+ディレクトリ名が「sp」だとすべて半分のサイズになります。　　　　
+あらかじめ2倍の画像を入れるように。
+<% } %>
+mixinに関して
+デフォルトでbeforeに挿入
+引数にafter指定でafterに挿入
+falseを指定すればその要素
+
+```
+<table class='dev_table'>
+<tr>
+<th>アイコン</th>
+<th>クラス名</th>
+<th>mixin名</th>
+</tr>
+<% _.each(data.sprites, function(sprite) { %>
+<tr>
+<td>
+<div class='<%= classNamePre %><%= sprite.name %>'></div>
+</td>
+<td>
+<span class='styleguide__copy'><%= classNamePre %><%= sprite.name %></span>
+</td>
+<td>
+<span class='styleguide__copy'>mix_<%= classNamePre %><%= sprite.name %></span>
+</td>
+</tr>
+<% }); %>
+</table>
+```
+*/
+
+
+
+
+
+
+
+
+
+
+
+<%
+    //エクステンド定義。bgならリピート。それ以外はno-repeatかつ、疑似要素へ
+%>
+%ext_sprite_<%= spriteName %> {
+    background-image: url(<%= imgPath %><%= imgName %>);
+    background-repeat: no-repeat;
+    content: '';
+    display: inline-block;
+}
+
+<%
+    //ループ開始
+%>
+<% _.each(data.sprites, function(sprite) { %>
+.<%= classNamePre %><%= sprite.name %>{
+    &:before {
+        @extend %ext_sprite_<%= spriteName %>;
+        <% if (for_sp) { %>
+        width: <%= sprite.width/2 %>px;
+        height: <%= sprite.height/2 %>px;
+        background-position: <%= sprite.offset_x/2 %>px <%= sprite.offset_y/2 %>px;
+        background-size: <%= sprite.total_width/2 %>px <%= sprite.total_height/2 %>px;
+        <% }else { %>
+        width: <%= sprite.width %>px;
+        height: <%= sprite.height %>px;
+        background-position: <%= sprite.offset_x %>px <%= sprite.offset_y %>px;
+        <% } %>
+    }
+}<% //ループ内で拾える情報 %>
+    //名前
+    //sprite.name         : <%= sprite.name %>
+    //x座標
+    //sprite.x            : <%= sprite.x %>
+    //y座標
+    //sprite.y            : <%= sprite.y %>
+    //実際にpositionで指定するx座標
+    //sprite.offset_x     : <%= sprite.offset_x %>
+    //実際にpositionで指定するy座標
+    //sprite.offset_y     : <%= sprite.offset_y %>
+    //その要素の幅
+    //sprite.width        : <%= sprite.width %>
+    //その要素の高さ
+    //sprite.height       : <%= sprite.height %>
+    //画像自体の幅
+    //sprite.total_width  : <%= sprite.total_width %>
+    //画像自体の高さ
+    //sprite.total_height : <%= sprite.total_height %>
+    //画像名
+    //sprite.image        : <%= sprite.image %>
+<%     //ループ内で拾える情報ここまで %>
+<% }); %>
+<%
+    //ループ終了
+%>
