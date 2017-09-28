@@ -1,6 +1,9 @@
 # my_development_environment
 gulpを使ったフロントエンド開発環境。
 
+## node.js
+v5.12.0
+
 ## 依存ライブラリ
 * babel-core: "^6.25.0",
 * babel-loader: "^7.1.1",
