@@ -34,8 +34,9 @@ v5.12.0
 * svg-inline-loader: "^0.8.0",
 * webpack: "^3.4.1",
 * webpack-stream: "^3.2.0"
+* gulp-pxtorem: "^3.0.0"
 
 ## 始めに入るもの
 ```
-npm i babel-core babel-loader babel-preset-es2015 browser-sync gulp gulp-autoprefixer gulp-cached gulp-changed gulp-clean-css gulp-connect-php gulp-consolidate gulp-csscomb gulp-ext-replace gulp-frontnote gulp-iconfont gulp-iconfont-css gulp-imagemin gulp-notify gulp-plumber gulp-prettify gulp-rename gulp-sass gulp-sourcemaps gulp-ttf2woff2 run-sequence source-map-loader svg-inline-loader webpack webpack-stream
+npm i babel-core babel-loader babel-preset-es2015 browser-sync gulp gulp-autoprefixer gulp-cached gulp-changed gulp-clean-css gulp-connect-php gulp-consolidate gulp-csscomb gulp-ext-replace gulp-frontnote gulp-iconfont gulp-iconfont-css gulp-imagemin gulp-notify gulp-plumber gulp-prettify gulp-rename gulp-sass gulp-sourcemaps gulp-ttf2woff2 run-sequence source-map-loader svg-inline-loader webpack webpack-stream gulp-pxtorem
 ```

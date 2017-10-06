@@ -138,7 +138,12 @@ module.exports = {
 		},
 		sourcemap_opt: {
 			sourceRoot: '../../../scss',	// いつかnodeで取得したい
-		}
+		},
+		px2rem_opt: {
+			rootValue: 10,
+			propList: ['font-size'],
+		},
+		postcss_opt: {},
 	},
 	watch: {
 		before_tasks: ['connectSync', 'imagemin','bs-reload','pug','js', 'styleguide', 'ts'],
